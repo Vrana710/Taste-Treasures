@@ -76,7 +76,7 @@ body {
 }
 
 .header-bg {
-    background-color: #7aad0d; /* Fallback color */
+    background-color: #8745b6; /* Fallback color */
     background-image: url('/frontend/static/images/addRecipe.png');
     background-size: cover;
     background-position: center;
