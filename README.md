@@ -45,7 +45,7 @@ Here are some screenshots of the application:
 
 1. **Clone the Repository**
    ```sh
-   git clone https://github.com/yourusername/Taste-Treasures.git
+   git clone https://github.com/Vrana710/Taste-Treasures.git
    ```
 
 2. **Navigate to the Project Directory**
