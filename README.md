@@ -11,6 +11,22 @@ Taste Treasures is a simple web application that allows users to add, view, and 
 - **Read More**: Users can view detailed information about a recipe in a new window.
 - **Delete Recipe**: Users can remove a recipe from the list.
 
+## Screenshots
+
+Here are some screenshots of the application:
+
+### Add Recipe Page
+![Add Recipe Page](/frontend/static/images/addRecipeSS.png)
+
+### Recipe Display
+![Recipe Display](/frontend/static/images/allRecipes.png)
+
+### Recipe Details
+![Recipe Details](/frontend/static/images/Recipe1.png)
+
+![Recipe Details](/frontend/static/images/Recipe2.png)
+
+
 ## Technologies Used
 
 - **HTML**: Structure of the web pages.
