@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste Treasures</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../frontend/static/css/styles.css">
+</head>
+<body>
+    <header class="header-bg text-white py-3 fixed-top">
+        <div class="container">
+            <section class="header-recipe-container">
+                <h1>Taste Treasures</h1>
+                <img src="../frontend/static/images/logo.png" alt="Logo" class="logo">
+            </section>
+        </div>
+    </header>
+
+    <main class="container-fluid mt-5 pt-4">
+        <div class="container">
+            <section id="add-recipe" class="mb-4">
+                <div class="add-recipe-container">
+                    <h2>Add Recipe</h2>
+                    <!-- Form elements go here -->
+                </div>
+
+                <form id="recipe-form">
+                    <div class="form-group">
+                        <label for="recipe-name">Recipe Name:</label>
+                        <input type="text" class="form-control" id="recipe-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ingredients">Ingredients:</label>
+                        <textarea class="form-control" id="ingredients" rows="3" placeholder="List ingredients separated by commas" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="steps">Steps:</label>
+                        <textarea class="form-control" id="steps" rows="3" placeholder="Steps for preparation" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipeImage">Recipe Image URL:</label>
+                        <input type="url" class="form-control" id="recipeImage" placeholder="http://example.com/my-dish.jpg">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Add Recipe</button>
+                </form>
+            </section>
+
+            <section id="your-recipes">
+                <h2>See Your Recipes</h2>
+                <div id="display-area" class="row">
+                    <!-- Recipes will be dynamically inserted here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-purple text-white py-3 fixed-bottom">
+        <div class="container text-center">
+            <p class="mb-0">Taste Treasures Developed by Varsha Rana &copy; 2024</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../frontend/static/js/script.js"></script>
+</body>
+</html>

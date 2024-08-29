@@ -1,0 +1,274 @@
+body {
+    padding-top: 56px; /* Header height */
+    padding-bottom: 50px; /* Footer height */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+#add-recipe, #your-recipes {
+    background: #9078b7a9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.recipe {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensures cards fit within their container */
+    max-width: 300px; /* Limits maximum width for smaller cards */
+    margin: 10px auto; /* Centers the cards horizontally */
+}
+
+.recipe:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recipe img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 150px; /* Limits the height of images */
+    animation: bounce 3s ease infinite; /* Apply animations */
+}
+
+.recipe h3 {
+    margin: 8px 0;
+    font-size: 1.25rem; /* Slightly smaller font size */
+}
+
+.recipe button {
+    background-color: #8745b6; /* Purple shade */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px; /* Smaller padding */
+    cursor: pointer;
+    font-size: 12px; /* Smaller font size */
+    margin: 8px 0 0;
+    transition: background-color 0.3s ease;
+}
+
+.recipe button:hover {
+    background-color: #6a3492;
+}
+
+.recipe .btn-danger {
+    background-color: #f44336;
+}
+
+.recipe .btn-danger:hover {
+    background-color: #d32f2f;
+}
+
+.bg-purple {
+    background-color: #8745b6; /* Distinct purple shade */
+}
+
+.header-bg {
+    background-color: #7aad0d; /* Fallback color */
+    background-image: url('/frontend/static/images/addRecipe.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 15px 0;
+    animation: zoomIn 1s ease-out, zoomOut 1s ease-in 2s;
+}
+
+.header-recipe-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Define keyframes for the bounce and color change animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes colorChange {
+    0% { color: #ad99bc; } /* Initial color */
+    50% { color: #6a3492; } /* Midpoint color */
+    100% { color: #ad99bc; } /* Final color */
+}
+
+/* Define keyframes for the zoom-in and zoom-out animation */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.9); /* Start with a slightly smaller size */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at the original size */
+        opacity: 1; /* End visible */
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1); /* Start at the original size */
+        opacity: 1; /* Start visible */
+    }
+    100% {
+        transform: scale(0.9); /* End with a slightly smaller size */
+        opacity: 0; /* End invisible */
+    }
+}
+
+
+/* Apply animation to h1 */
+h1 {
+    font-size: 2.5rem; /* Increase font size for prominence */
+    margin: 0;
+    padding: 0;
+    text-align: right; /* Align text to the right */
+    font-weight: bold; /* Make text bold */
+    color: #ad99bc; /* Vibrant purple color */
+    text-shadow: 2px 2px 4px rgba(12, 11, 11, 0.978); /* Add subtle shadow for depth */
+    letter-spacing: 1px; /* Increase letter spacing for readability */
+    text-transform: uppercase; /* Transform text to uppercase for emphasis */
+    animation: bounce 1s ease infinite, colorChange 3s ease infinite; /* Apply both animations */
+}
+
+
+/* Define keyframes for the bounce and color change animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes colorChange {
+    0% { color: #ad99bc; } /* Initial color */
+    50% { color: #6a3492; } /* Midpoint color */
+    100% { color: #ad99bc; } /* Final color */
+}
+
+/* Apply animation to h1 */
+h1 {
+    font-size: 2.5rem; /* Increase font size for prominence */
+    margin: 0;
+    padding: 0;
+    text-align: right; /* Align text to the right */
+    font-weight: bold; /* Make text bold */
+    color: #ad99bc; /* Vibrant purple color */
+    text-shadow: 2px 2px 4px rgba(12, 11, 11, 0.978); /* Add subtle shadow for depth */
+    letter-spacing: 1px; /* Increase letter spacing for readability */
+    text-transform: uppercase; /* Transform text to uppercase for emphasis */
+    animation: bounce 1s ease infinite, colorChange 3s ease infinite; /* Apply both animations */
+}
+
+
+.logo {
+    height: 50px;
+    width: auto;
+    margin-left: 15px;
+    animation: bounce 1s ease infinite; /* Apply animations */
+}
+
+.add-recipe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('/frontend/static/images/Recipe.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    animation: zoomIn 1s ease-out 2s, zoomOut 1s ease-in 2s;
+}
+
+.add-recipe-container h2 {
+    margin: 0;
+}
+
+.add-recipe-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .recipe {
+        padding: 8px;
+        max-width: 100%; /* Ensures responsiveness */
+    }
+
+    .recipe img {
+        max-width: 120px; /* Smaller image size */
+        max-height: 120px; /* Restricts image height */
+    }
+
+    .recipe-content {
+        flex: 1;
+    }
+}
+
+@media (min-width: 576px) {
+    .recipe {
+        padding: 10px;
+    }
+
+    .recipe img {
+        max-width: 150px;
+    }
+
+    .recipe-content {
+        flex: 1;
+    }
+}
+
+#your-recipes h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    position: relative;
+    cursor: pointer;
+    color: #8745b6;
+    transition: color 0.3s ease;
+}
+
+#your-recipes h2:hover {
+    color: #6a3492;
+}
+
+#your-recipes h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #8745b6;
+    left: 50%;
+    bottom: -5px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+#your-recipes h2:hover::after {
+    width: 100%;
+}
