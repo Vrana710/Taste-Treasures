@@ -1,3 +1,8 @@
+/*
+    General body styling:
+    - Adjusts padding to account for fixed header and footer.
+    - Sets a consistent font family and line height.
+*/
 body {
     padding-top: 56px; /* Header height */
     padding-bottom: 50px; /* Footer height */
@@ -5,6 +10,12 @@ body {
     line-height: 1.6;
 }
 
+/*
+    Section styling for 'Add Recipe' and 'Your Recipes':
+    - Background color with semi-transparency.
+    - Rounded corners and box shadow for depth.
+    - Padding for internal spacing.
+*/
 #add-recipe, #your-recipes {
     background: #9078b7a9;
     border-radius: 8px;
@@ -12,6 +23,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/*
+    Recipe card styling:
+    - Background color and border for the card.
+    - Padding, margin, and alignment for internal content.
+    - Box shadow and transformation effects for hover interaction.
+*/
 .recipe {
     background: #fafafa;
     border: 1px solid #ddd;
@@ -29,11 +46,21 @@ body {
     margin: 10px auto; /* Centers the cards horizontally */
 }
 
+/*
+    Hover effect for recipe cards:
+    - Slightly scales the card and enhances the shadow for emphasis.
+*/
 .recipe:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/*
+    Image styling within recipe cards:
+    - Ensures images are responsive within their container.
+    - Adds a bounce animation to the image.
+    - Limits the maximum height of the images.
+*/
 .recipe img {
     max-width: 100%;
     height: auto;
@@ -42,11 +69,20 @@ body {
     animation: bounce 3s ease infinite; /* Apply animations */
 }
 
+/*
+    Heading styling within recipe cards:
+    - Sets margins and font size for the title.
+*/
 .recipe h3 {
     margin: 8px 0;
     font-size: 1.25rem; /* Slightly smaller font size */
 }
 
+/*
+    Button styling within recipe cards:
+    - Sets background color, text color, and other button attributes.
+    - Includes hover effects to change background color on interaction.
+*/
 .recipe button {
     background-color: #8745b6; /* Purple shade */
     color: white;
@@ -63,6 +99,10 @@ body {
     background-color: #6a3492;
 }
 
+/*
+    Styling for 'Delete' button:
+    - Red color scheme for danger button and hover effects.
+*/
 .recipe .btn-danger {
     background-color: #f44336;
 }
@@ -71,10 +111,18 @@ body {
     background-color: #d32f2f;
 }
 
+/*
+    General background color styling for elements with a purple background.
+*/
 .bg-purple {
     background-color: #8745b6; /* Distinct purple shade */
 }
 
+/*
+    Header background styling:
+    - Uses an image as the background with a fallback color.
+    - Animations are applied for a zoom-in and zoom-out effect.
+*/
 .header-bg {
     background-color: #8745b6; /* Fallback color */
     background-image: url('/frontend/static/images/addRecipe.png');
@@ -86,50 +134,41 @@ body {
     animation: zoomIn 1s ease-out, zoomOut 1s ease-in 2s;
 }
 
+/*
+    Flexbox styling for aligning header content:
+    - Aligns items to the right and centers them vertically.
+*/
 .header-recipe-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-/* Define keyframes for the bounce and color change animation */
+/*
+    Keyframes for bounce animation:
+    - Creates a vertical bounce effect for the element.
+*/
 @keyframes bounce {
     0% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0); }
 }
 
+/*
+    Keyframes for color change animation:
+    - Cycles the text color between specified values.
+*/
 @keyframes colorChange {
     0% { color: #ad99bc; } /* Initial color */
     50% { color: #6a3492; } /* Midpoint color */
     100% { color: #ad99bc; } /* Final color */
 }
 
-/* Define keyframes for the zoom-in and zoom-out animation */
-@keyframes zoomIn {
-    0% {
-        transform: scale(0.9); /* Start with a slightly smaller size */
-        opacity: 0; /* Start invisible */
-    }
-    100% {
-        transform: scale(1); /* End at the original size */
-        opacity: 1; /* End visible */
-    }
-}
-
-@keyframes zoomOut {
-    0% {
-        transform: scale(1); /* Start at the original size */
-        opacity: 1; /* Start visible */
-    }
-    100% {
-        transform: scale(0.9); /* End with a slightly smaller size */
-        opacity: 0; /* End invisible */
-    }
-}
-
-
-/* Apply animation to h1 */
+/*
+    Styling for the main page heading:
+    - Adjusts font size, alignment, and other text attributes.
+    - Applies both bounce and color change animations.
+*/
 h1 {
     font-size: 2.5rem; /* Increase font size for prominence */
     margin: 0;
@@ -143,35 +182,10 @@ h1 {
     animation: bounce 1s ease infinite, colorChange 3s ease infinite; /* Apply both animations */
 }
 
-
-/* Define keyframes for the bounce and color change animation */
-@keyframes bounce {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}
-
-@keyframes colorChange {
-    0% { color: #ad99bc; } /* Initial color */
-    50% { color: #6a3492; } /* Midpoint color */
-    100% { color: #ad99bc; } /* Final color */
-}
-
-/* Apply animation to h1 */
-h1 {
-    font-size: 2.5rem; /* Increase font size for prominence */
-    margin: 0;
-    padding: 0;
-    text-align: right; /* Align text to the right */
-    font-weight: bold; /* Make text bold */
-    color: #ad99bc; /* Vibrant purple color */
-    text-shadow: 2px 2px 4px rgba(12, 11, 11, 0.978); /* Add subtle shadow for depth */
-    letter-spacing: 1px; /* Increase letter spacing for readability */
-    text-transform: uppercase; /* Transform text to uppercase for emphasis */
-    animation: bounce 1s ease infinite, colorChange 3s ease infinite; /* Apply both animations */
-}
-
-
+/*
+    Styling for the logo image:
+    - Adjusts size and applies bounce animation.
+*/
 .logo {
     height: 50px;
     width: auto;
@@ -179,6 +193,12 @@ h1 {
     animation: bounce 1s ease infinite; /* Apply animations */
 }
 
+/*
+    Container styling for the 'Add Recipe' section:
+    - Flexbox layout with centered content.
+    - Uses a background image with a semi-transparent overlay.
+    - Applies zoom-in and zoom-out animations.
+*/
 .add-recipe-container {
     display: flex;
     flex-direction: column;
@@ -201,6 +221,10 @@ h1 {
     margin: 0;
 }
 
+/*
+    Pseudo-element styling for overlay effect:
+    - Creates a semi-transparent overlay on the 'Add Recipe' container.
+*/
 .add-recipe-container::before {
     content: '';
     position: absolute;
@@ -213,6 +237,10 @@ h1 {
     z-index: -1;
 }
 
+/*
+    Media query for devices with a max-width of 768px:
+    - Adjusts padding and image sizes for responsiveness.
+*/
 @media (max-width: 768px) {
     .recipe {
         padding: 8px;
@@ -229,6 +257,10 @@ h1 {
     }
 }
 
+/*
+    Media query for devices with a minimum width of 576px:
+    - Adjusts padding and image sizes for better layout on larger screens.
+*/
 @media (min-width: 576px) {
     .recipe {
         padding: 10px;
@@ -243,6 +275,11 @@ h1 {
     }
 }
 
+/*
+    Styling for the 'Your Recipes' section heading:
+    - Centers text, adjusts font size, and adds hover effects.
+    - Includes an underline effect on hover.
+*/
 #your-recipes h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -257,6 +294,10 @@ h1 {
     color: #6a3492;
 }
 
+/*
+    Pseudo-element styling for heading underline:
+    - Creates an underline effect that expands on hover.
+*/
 #your-recipes h2::after {
     content: '';
     position: absolute;

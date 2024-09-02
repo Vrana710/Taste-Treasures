@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Metadata for the webpage -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the webpage -->
     <title>Taste Treasures</title>
+    
+    <!-- Links to external CSS stylesheets -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../frontend/static/css/styles.css">
 </head>
 <body>
+    <!-- Header section with navigation and branding -->
     <header class="header-bg text-white py-3 fixed-top">
         <div class="container">
             <section class="header-recipe-container">
@@ -17,14 +23,16 @@
         </div>
     </header>
 
+    <!-- Main content area -->
     <main class="container-fluid mt-5 pt-4">
         <div class="container">
+            <!-- Section for adding a new recipe -->
             <section id="add-recipe" class="mb-4">
                 <div class="add-recipe-container">
                     <h2>Add Recipe</h2>
-                    <!-- Form elements go here -->
                 </div>
 
+                <!-- Form for submitting a new recipe -->
                 <form id="recipe-form">
                     <div class="form-group">
                         <label for="recipe-name">Recipe Name:</label>
@@ -46,6 +54,7 @@
                 </form>
             </section>
 
+            <!-- Section for displaying the user's recipes -->
             <section id="your-recipes">
                 <h2>See Your Recipes</h2>
                 <div id="display-area" class="row">
@@ -55,12 +64,14 @@
         </div>
     </main>
 
+    <!-- Footer section with copyright information -->
     <footer class="bg-purple text-white py-3 fixed-bottom">
         <div class="container text-center">
             <p class="mb-0">Taste Treasures Developed by Varsha Rana &copy; 2024</p>
         </div>
     </footer>
 
+    <!-- External JavaScript libraries and custom scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

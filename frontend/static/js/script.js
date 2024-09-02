@@ -9,23 +9,37 @@ let displayArea = document.getElementById('display-area');
 // Initialize recipes array
 let recipes = [];
 
-// Load recipes from local storage on page load
-document.addEventListener('DOMContentLoaded', function() {
+/**
+ * Loads recipes from local storage and displays them when the page is loaded.
+ */
+document.addEventListener('DOMContentLoaded', function () {
     if (localStorage.getItem('recipes')) {
         recipes = JSON.parse(localStorage.getItem('recipes'));
         recipes.forEach((recipe, index) => displayRecipe(recipe, index));
     }
 });
 
-// Event listener for form submission
-recipeForm.addEventListener('submit', function(event) {
+/**
+ * Handles form submission, capturing input values and storing a new recipe.
+ * Prevents submission if required fields are empty, and saves the new recipe
+ * to local storage, updating the displayed list.
+ *
+ * @param {Event} event - The form submission event.
+ */
+recipeForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
     // Capture input values
-    let enteredRecipeName = recipeName.value;
-    let enteredIngredients = ingredients.value;
-    let enteredSteps = steps.value;
-    let enteredRecipeImage = recipeImage.value;
+    let enteredRecipeName = recipeName.value.trim();
+    let enteredIngredients = ingredients.value.trim();
+    let enteredSteps = steps.value.trim();
+    let enteredRecipeImage = recipeImage.value.trim();
+
+    // Check if any required fields are empty
+    if (enteredRecipeName === '' || enteredIngredients === '' || enteredSteps === '') {
+        alert('Please fill out all required fields.');
+        return;
+    }
 
     // Create a new recipe object
     let newRecipe = {
@@ -48,14 +62,19 @@ recipeForm.addEventListener('submit', function(event) {
     recipeForm.reset();
 });
 
-// Function to display a recipe
+/**
+ * Displays a recipe on the page by creating a new div element and appending it
+ * to the display area. Provides options to view recipe details or delete the recipe.
+ *
+ * @param {Object} recipe - The recipe object containing the recipe details.
+ * @param {number} index - The index of the recipe in the recipes array.
+ */
 function displayRecipe(recipe, index) {
     let recipeDiv = document.createElement('div');
     recipeDiv.classList.add('col-md-4', 'recipe');
 
     let title = `<h3>${recipe.name}</h3>`;
     let img = recipe.image ? `<img src="${recipe.image}" alt="${recipe.name}" class="img-fluid rounded">` : '';
-    
 
     recipeDiv.innerHTML = `
         ${img}
@@ -69,7 +88,12 @@ function displayRecipe(recipe, index) {
     displayArea.appendChild(recipeDiv);
 }
 
-
+/**
+ * Opens a new window displaying detailed information about a specific recipe,
+ * including the name, ingredients, steps, and image.
+ *
+ * @param {number} index - The index of the recipe in the recipes array.
+ */
 function openRecipeDetails(index) {
     let recipe = recipes[index];
     let recipeDetails = `
@@ -102,18 +126,26 @@ function openRecipeDetails(index) {
                     <h2>Ingredients</h2>
                     <p>${recipe.ingredients}</p>
                     <h2>Steps</h2>
-                    <p>${recipe.steps}</p>
+                    <p>${recipe.steps.replace(/\n/g, '<br/>')}</p>
                     <button class="back-home-btn" onclick="window.close()">Back to Home</button>
                 </div>
             </body>
         </html>
     `;
-    
+
     let newWindow = window.open();
     newWindow.document.write(recipeDetails);
     newWindow.document.close();
 }
 
+/**
+ * Shows a temporary notification on the page, displaying a message
+ * with a specified type (e.g., success, error). The notification
+ * disappears after a few seconds.
+ *
+ * @param {string} message - The message to display in the notification.
+ * @param {string} [type='success'] - The type of notification (e.g., success, error).
+ */
 function showNotification(message, type = 'success') {
     let notification = document.createElement('div');
     notification.className = `notification ${type}`;
@@ -125,42 +157,12 @@ function showNotification(message, type = 'success') {
     }, 3000);
 }
 
-// Modify the form submission handler to show a notification
-recipeForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    // Capture input values
-    let enteredRecipeName = recipeName.value;
-    let enteredIngredients = ingredients.value;
-    let enteredSteps = steps.value;
-    let enteredRecipeImage = recipeImage.value;
-
-    // Create a new recipe object
-    let newRecipe = {
-        name: enteredRecipeName,
-        ingredients: enteredIngredients,
-        steps: enteredSteps,
-        image: enteredRecipeImage
-    };
-
-    // Add the new recipe to the recipes array
-    recipes.push(newRecipe);
-
-    // Save recipes to local storage
-    localStorage.setItem('recipes', JSON.stringify(recipes));
-
-    // Display the new recipe
-    displayRecipe(newRecipe, recipes.length - 1);
-
-    // Clear input fields
-    recipeForm.reset();
-
-    // Show notification
-    showNotification('Recipe added successfully!');
-});
-
-
-// Function to delete a recipe
+/**
+ * Deletes a recipe from the recipes array and updates local storage.
+ * Clears the display area and redisplays the remaining recipes.
+ *
+ * @param {number} index - The index of the recipe to delete in the recipes array.
+ */
 function deleteRecipe(index) {
     // Remove recipe from the array
     recipes.splice(index, 1);
